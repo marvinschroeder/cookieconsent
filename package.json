@@ -1,5 +1,5 @@
 {
-  "name": "cookieconsent",
+  "name": "@marvinschroeder/cookieconsent",
   "version": "1.2.4",
   "description": "",
   "main": "index.js",
@@ -13,22 +13,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brainsum/cookieconsent.git"
+    "url": "git+https://github.com/marvinschroeder/cookieconsent.git"
   },
   "keywords": [],
   "author": "Brainsum",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/brainsum/cookieconsent/issues"
+    "url": "https://github.com/marvinschroeder/cookieconsent/issues"
   },
-  "homepage": "https://github.com/brainsum/cookieconsent#readme",
+  "homepage": "https://github.com/marvinschroeder/cookieconsent#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "core-js": "^2.6.5",
-    "lodash": "^4.17.11",
-    "parcel-bundler": "^1.11.0",
-    "redom": "^3.18.0"
+    "core-js": "^2.6.11",
+    "lodash": "^4.17.15",
+    "parcel-bundler": "^1.12.4",
+    "redom": "^3.25.1"
   }
 }
