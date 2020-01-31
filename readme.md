@@ -58,7 +58,7 @@ The script is being controlled mainly by a configuration object which is passed 
     modalMainTextMoreLink: null,
     // How lond to wait until bar comes up
     barTimeout: 1000,
-    // Look and feel
+    // Look and feel; if theme set to false no inline CSS styles were rendered (you have to include them for yourself)
     theme: {
       barColor: '#2C7CBF',
       barTextColor: '#FFF',

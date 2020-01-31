@@ -2651,7 +2651,11 @@ function () {
   }, {
     key: "buildBar",
     value: function buildBar() {
-      return (0, _redom.el)('div#cconsent-bar.ccb--hidden', (0, _redom.el)("div.ccb__wrapper", (0, _redom.el)('div.ccb__left', (0, _redom.el)('div.cc-text', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barMainText'))), (0, _redom.el)('div.ccb__right', (0, _redom.el)('div.ccb__button', (0, _redom.el)('a.ccb__edit', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barLinkSetting')), (0, _redom.el)('button.consent-give', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barBtnAcceptAll'))))));
+      return (0, _redom.el)('div#cconsent-bar.ccb--hidden', (0, _redom.el)("div.ccb__wrapper", (0, _redom.el)('div.ccb__left', (0, _redom.el)('div.cc-text', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barMainText'), window.CookieConsent.config.modalMainTextMoreLink ? (0, _redom.el)('a', {
+        href: window.CookieConsent.config.modalMainTextMoreLink,
+        target: '_blank',
+        rel: 'noopener noreferrer'
+      }, _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'learnMore')) : null)), (0, _redom.el)('div.ccb__right', (0, _redom.el)('div.ccb__button', (0, _redom.el)('a.ccb__edit', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barLinkSetting')), (0, _redom.el)('button.consent-give', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barBtnAcceptAll'))))));
     }
   }, {
     key: "buildModal",
@@ -2709,7 +2713,7 @@ function () {
         href: window.CookieConsent.config.modalMainTextMoreLink,
         target: '_blank',
         rel: 'noopener noreferrer'
-      }, _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalMainTitle')) : null), (0, _redom.el)('div.ccm__cheading__close', '×')), (0, _redom.el)('div.ccm__content__body', (0, _redom.el)('div.ccm__tabs', modalTabGroups())), (0, _redom.el)('div.ccm__footer', (0, _redom.el)('button#ccm__footer__consent-modal-submit', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnSave')), (0, _redom.el)('button.consent-give', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnAcceptAll')))));
+      }, _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'learnMore')) : null), (0, _redom.el)('div.ccm__cheading__close', '×')), (0, _redom.el)('div.ccm__content__body', (0, _redom.el)('div.ccm__tabs', modalTabGroups())), (0, _redom.el)('div.ccm__footer', (0, _redom.el)('button#ccm__footer__consent-modal-submit', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnSave')), (0, _redom.el)('button.consent-give', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnAcceptAll')))));
     }
   }, {
     key: "modalRedrawIcons",
@@ -2778,7 +2782,10 @@ function () {
       var that = this;
 
       _Utilities.default.ready(function () {
-        that.render('style', that.buildStyle());
+        if (window.CookieConsent.config.theme !== false) {
+          that.render('style', that.buildStyle());
+        }
+
         that.render('bar', that.buildBar(), function (bar) {
           // Show the bar after a while
           if (!window.CookieConsent.config.cookieExists) {

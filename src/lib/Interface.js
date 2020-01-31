@@ -218,7 +218,9 @@ export default class Interface {
 
     Utilities.ready(function() {
 
-      that.render('style', that.buildStyle());
+      if (window.CookieConsent.config.theme !== false) {
+        that.render('style', that.buildStyle());
+      }
 
       that.render('bar', that.buildBar(), (bar) => {
 
