@@ -75,7 +75,10 @@ export default class Interface {
     return el('div#cconsent-bar.ccb--hidden',
         el(`div.ccb__wrapper`,
           el('div.ccb__left',
-            el('div.cc-text', Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barMainText'))
+            el('div.cc-text',
+              Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barMainText'),
+              (window.CookieConsent.config.modalMainTextMoreLink) ? el('a', { href: window.CookieConsent.config.modalMainTextMoreLink, target: '_blank', rel: 'noopener noreferrer' }, Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'learnMore')) : null
+            )
           ),
           el('div.ccb__right',
             el('div.ccb__button',
